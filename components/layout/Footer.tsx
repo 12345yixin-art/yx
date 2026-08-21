@@ -23,9 +23,29 @@ export function Footer() {
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
               {dictionary.footer.summary}
             </p>
-            <p className="mt-4 text-sm text-slate-300">
-              {dictionary.footer.contact}
-            </p>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
+              <p>
+                <span className="text-slate-400">
+                  {dictionary.footer.contact}:
+                </span>{" "}
+                <a
+                  className="font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                  href={`mailto:${dictionary.footer.email}`}
+                >
+                  {dictionary.footer.email}
+                </a>
+              </p>
+              <address className="not-italic">
+                <span className="block text-slate-400">
+                  {dictionary.footer.addressLabel}
+                </span>
+                {dictionary.footer.address.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+            </div>
           </div>
           <FooterColumn title={dictionary.footer.navigation} items={getNavigationItems(locale, dictionary)} />
           <FooterColumn title={dictionary.footer.services} items={getServiceItems(locale, dictionary)} />

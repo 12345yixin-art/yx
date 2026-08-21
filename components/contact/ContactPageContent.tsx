@@ -71,8 +71,35 @@ export function ContactPageContent({
               <p className="mt-4 max-w-2xl text-base leading-8 text-slate-200">
                 {contact.direct.copy}
               </p>
-              {/* TODO: Add verified ARK contact details. */}
-              {/* Reserved for NEXT_PUBLIC_WHATSAPP_NUMBER once a verified number is approved. */}
+              <dl className="mt-8 grid gap-6 sm:grid-cols-2">
+                <div className="border-t border-white/15 pt-5">
+                  <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--ark-gold-soft)]">
+                    {contact.direct.emailLabel}
+                  </dt>
+                  <dd className="mt-3">
+                    <a
+                      className="text-base font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                      href={`mailto:${contact.direct.email}`}
+                    >
+                      {contact.direct.email}
+                    </a>
+                  </dd>
+                </div>
+                <div className="border-t border-white/15 pt-5">
+                  <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--ark-gold-soft)]">
+                    {contact.direct.addressLabel}
+                  </dt>
+                  <dd className="mt-3 text-sm leading-7 text-slate-200">
+                    <address className="not-italic">
+                      {contact.direct.address.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
+                  </dd>
+                </div>
+              </dl>
             </div>
           </div>
         </Container>
