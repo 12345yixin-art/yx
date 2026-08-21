@@ -35,6 +35,30 @@ export function Footer() {
                   {dictionary.footer.email}
                 </a>
               </p>
+              <p>
+                <span className="text-slate-400">
+                  {dictionary.footer.whatsappLabel}:
+                </span>{" "}
+                <a
+                  className="font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                  href={dictionary.footer.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {dictionary.footer.whatsapp}
+                </a>
+              </p>
+              <p>
+                <span className="text-slate-400">
+                  {dictionary.footer.phoneLabel}:
+                </span>{" "}
+                <a
+                  className="font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                  href={dictionary.footer.phoneHref}
+                >
+                  {dictionary.footer.phone}
+                </a>
+              </p>
               <address className="not-italic">
                 <span className="block text-slate-400">
                   {dictionary.footer.addressLabel}

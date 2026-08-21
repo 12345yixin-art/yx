@@ -87,6 +87,34 @@ export function ContactPageContent({
                 </div>
                 <div className="border-t border-white/15 pt-5">
                   <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--ark-gold-soft)]">
+                    {contact.direct.whatsappLabel}
+                  </dt>
+                  <dd className="mt-3">
+                    <a
+                      className="text-base font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                      href={contact.direct.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {contact.direct.whatsapp}
+                    </a>
+                  </dd>
+                </div>
+                <div className="border-t border-white/15 pt-5">
+                  <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--ark-gold-soft)]">
+                    {contact.direct.phoneLabel}
+                  </dt>
+                  <dd className="mt-3">
+                    <a
+                      className="text-base font-semibold text-white underline decoration-[var(--ark-gold)] underline-offset-4 transition hover:text-[var(--ark-gold-soft)]"
+                      href={contact.direct.phoneHref}
+                    >
+                      {contact.direct.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div className="border-t border-white/15 pt-5">
+                  <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--ark-gold-soft)]">
                     {contact.direct.addressLabel}
                   </dt>
                   <dd className="mt-3 text-sm leading-7 text-slate-200">

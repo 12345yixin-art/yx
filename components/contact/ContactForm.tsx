@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/messages";
 
@@ -20,13 +20,24 @@ export function ContactForm({
       <p className="mt-5 max-w-xl text-base leading-8 text-[var(--ark-gray)]">
         {form.copy}
       </p>
-      <a
-        className="ark-button ark-button-primary mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--ark-radius)] border px-5 py-3 text-sm font-semibold transition-colors duration-200"
-        href={`mailto:${form.email}`}
-      >
-        <Mail aria-hidden="true" size={16} />
-        {form.cta}
-      </a>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          className="ark-button ark-button-primary inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--ark-radius)] border px-5 py-3 text-sm font-semibold transition-colors duration-200"
+          href={form.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MessageCircle aria-hidden="true" size={16} />
+          {form.whatsappCta}
+        </a>
+        <a
+          className="ark-button ark-button-secondary inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--ark-radius)] border px-5 py-3 text-sm font-semibold transition-colors duration-200"
+          href={`mailto:${form.email}`}
+        >
+          <Mail aria-hidden="true" size={16} />
+          {form.cta}
+        </a>
+      </div>
       <p className="mt-6 text-sm leading-7 text-[var(--ark-gray)]">
         {form.consentBefore}
         <Link className="font-semibold text-[var(--ark-navy)] underline underline-offset-4" href={`/${locale}/privacy`}>
