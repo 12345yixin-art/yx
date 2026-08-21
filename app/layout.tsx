@@ -3,7 +3,8 @@ import "./globals.css";
 import { HtmlLangSetter } from "@/components/layout/HtmlLangSetter";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { absoluteUrl, getSiteUrl } from "@/lib/site";
+import { sharedOpenGraphImages, sharedTwitterImages } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -17,14 +18,7 @@ export const metadata: Metadata = {
     title: "ARK Legacy Partner | Financial Planning & Insurance Malaysia",
     description:
       "Financial planning, protection, legacy and business solutions for individuals, families and businesses in Malaysia.",
-    images: [
-      {
-        url: absoluteUrl("/opengraph-image"),
-        width: 1200,
-        height: 630,
-        alt: "ARK Legacy Partner",
-      },
-    ],
+    images: sharedOpenGraphImages,
     type: "website",
   },
   twitter: {
@@ -32,7 +26,7 @@ export const metadata: Metadata = {
     title: "ARK Legacy Partner | Financial Planning & Insurance Malaysia",
     description:
       "Financial planning, protection, legacy and business solutions for individuals, families and businesses in Malaysia.",
-    images: [absoluteUrl("/opengraph-image")],
+    images: sharedTwitterImages,
   },
   icons: {
     icon: "/ark-logo.jpg",

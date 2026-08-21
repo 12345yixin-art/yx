@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArticlePageContent } from "@/components/insights/ArticlePageContent";
 import { getAllInsightPaths, getInsight } from "@/data/insights";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { sharedOpenGraphImages } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: article.seoDescription,
       type: "article",
       locale: locale === "zh" ? "zh_CN" : "en_US",
+      images: sharedOpenGraphImages,
     },
     alternates: {
       canonical: `/${locale}/insights/${slug}`,

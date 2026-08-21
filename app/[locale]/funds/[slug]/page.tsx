@@ -4,6 +4,7 @@ import { FundDetailPageContent } from "@/components/funds/FundDetailPageContent"
 import { getAiaFund, getAiaFundPaths } from "@/data/aia-funds";
 import { getAiaFundDisplayData } from "@/lib/aia/server";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { sharedOpenGraphImages } from "@/lib/seo";
 import { getDictionary } from "@/messages";
 
 type PageProps = {
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       type: "website",
       locale: locale === "zh" ? "zh_CN" : "en_US",
+      images: sharedOpenGraphImages,
     },
     alternates: {
       canonical: `/${locale}/funds/${slug}`,

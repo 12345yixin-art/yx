@@ -10,6 +10,7 @@ import { ModernHero } from "@/components/home/ModernHero";
 import { PlanningPillars } from "@/components/home/PlanningPillars";
 import { getAllAiaFundDisplayData } from "@/lib/aia/server";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { sharedOpenGraphImages } from "@/lib/seo";
 import { getDictionary } from "@/messages";
 
 type PageProps = {
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: dictionary.meta.description,
       type: "website",
       locale: locale === "zh" ? "zh_CN" : "en_US",
+      images: sharedOpenGraphImages,
     },
     alternates: {
       canonical: `/${locale}`,

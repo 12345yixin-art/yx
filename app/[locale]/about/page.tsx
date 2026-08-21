@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AboutPageContent } from "@/components/about/AboutPageContent";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { sharedOpenGraphImages } from "@/lib/seo";
 import { getDictionary } from "@/messages";
 
 type PageProps = {
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: meta.description,
       type: "website",
       locale: locale === "zh" ? "zh_CN" : "en_US",
+      images: sharedOpenGraphImages,
     },
     alternates: {
       canonical: `/${locale}/about`,

@@ -503,11 +503,6 @@ export const dictionaries = {
         cta: "Contact ARK",
       },
     },
-    placeholder: {
-      details: "Content under review",
-      body:
-        "This page is intentionally structured as a placeholder. Full copy, sections and compliance-reviewed details will be added in the next phases.",
-    },
   },
   zh: {
     meta: {
@@ -974,10 +969,6 @@ export const dictionaries = {
         title: "直接聊一聊，可能是最简单的开始。",
         cta: "联系我们",
       },
-    },
-    placeholder: {
-      details: "内容审核中",
-      body: "此页面目前保留为基础结构。完整内容、页面区块与合规审核后的资料将在后续阶段加入。",
     },
   },
 } as const;

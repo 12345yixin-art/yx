@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { InsightsPageContent } from "@/components/insights/InsightsPageContent";
 import { insightHubCopy } from "@/data/insights";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { sharedOpenGraphImages } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: meta.description,
       type: "website",
       locale: locale === "zh" ? "zh_CN" : "en_US",
+      images: sharedOpenGraphImages,
     },
     alternates: {
       canonical: `/${locale}/insights`,
