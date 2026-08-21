@@ -1,0 +1,47 @@
+name: Sync AIA fund NAV
+
+on:
+  schedule:
+    - cron: "15 1,9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Sync public AIA fund pages
+        env:
+          AIA_SYNC_HEADLESS: "false"
+        run: xvfb-run --auto-servernum npm run sync:aia-funds
+
+      - name: Commit changed fund snapshots
+        run: |
+          if git diff --quiet -- data/aia-funds-latest.json data/aia-fund-history-latest.json; then
+            echo "No fund snapshot changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/aia-funds-latest.json data/aia-fund-history-latest.json
+          git commit -m "Update AIA fund NAV snapshot"
+          git push

@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --ark-navy: #111827;
+  --ark-navy-2: #17243a;
+  --ark-ink: #0f172a;
+  --ark-gold: #b89652;
+  --ark-gold-soft: #d8c293;
+  --ark-white: #ffffff;
+  --ark-warm-white: #f8f5ef;
+  --ark-mist: #eef1f4;
+  --ark-gray: #64748b;
+  --ark-border: #d9dee6;
+  --ark-focus: #caa45e;
+  --ark-radius: 8px;
+  --ark-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ark-warm-white);
+  color: var(--ark-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+.lang-zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Heiti SC", Arial, sans-serif;
+}
+
+.lang-zh .font-serif {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", "Microsoft YaHei", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--ark-gold-soft);
+  color: var(--ark-navy);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ark-focus);
+  outline-offset: 3px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.ark-prose p {
+  color: var(--ark-gray);
+  line-height: 1.75;
+}
+
+.ark-section-label {
+  color: var(--ark-gold);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.ark-section-label-soft {
+  color: var(--ark-gold-soft);
+}
+
+.ark-section-number-label {
+  color: var(--ark-gold);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.ark-section-number-label.ark-section-label-soft {
+  color: var(--ark-gold-soft);
+}
+
+.lang-zh .ark-section-label,
+.lang-zh .ark-section-number-label {
+  letter-spacing: 0.055em;
+}
+
+@media (min-width: 1024px) {
+  .ark-section-label {
+    font-size: 1.0625rem;
+  }
+
+  .ark-section-number-label {
+    font-size: 1.2rem;
+  }
+}
+
+.ark-button {
+  border-color: var(--ark-border);
+  background: transparent;
+  color: var(--ark-navy);
+  text-decoration: none;
+}
+
+.ark-button.ark-button-primary,
+.ark-button[data-button-variant="primary"] {
+  background: var(--ark-navy) !important;
+  border-color: var(--ark-navy) !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-primary:hover,
+.ark-button[data-button-variant="primary"]:hover {
+  background: var(--ark-navy-2) !important;
+  border-color: var(--ark-navy-2) !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-primary:active,
+.ark-button[data-button-variant="primary"]:active {
+  background: var(--ark-ink) !important;
+  border-color: var(--ark-ink) !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-secondary,
+.ark-button[data-button-variant="secondary"] {
+  background: transparent !important;
+  border-color: var(--ark-border) !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-secondary:hover,
+.ark-button[data-button-variant="secondary"]:hover {
+  background: var(--ark-white) !important;
+  border-color: var(--ark-gold-soft) !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-inverted,
+.ark-button[data-button-variant="inverted"] {
+  background: var(--ark-white) !important;
+  border-color: var(--ark-white) !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-inverted:hover,
+.ark-button[data-button-variant="inverted"]:hover {
+  background: var(--ark-gold-soft) !important;
+  border-color: var(--ark-gold-soft) !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-inverted:active,
+.ark-button[data-button-variant="inverted"]:active {
+  background: var(--ark-warm-white) !important;
+  border-color: var(--ark-warm-white) !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-dark-secondary,
+.ark-button[data-button-variant="darkSecondary"] {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-dark-secondary:hover,
+.ark-button[data-button-variant="darkSecondary"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.48) !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-ghost,
+.ark-button[data-button-variant="ghost"] {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--ark-navy) !important;
+}
+
+.ark-button.ark-button-ghost:hover,
+.ark-button[data-button-variant="ghost"]:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--ark-gold) !important;
+}
+
+.ark-button.ark-button-ghost-inverted,
+.ark-button[data-button-variant="ghostInverted"] {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--ark-white) !important;
+}
+
+.ark-button.ark-button-ghost-inverted:hover,
+.ark-button[data-button-variant="ghostInverted"]:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--ark-gold-soft) !important;
+}
+
+.ark-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
