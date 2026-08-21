@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { FaqAccordion } from "@/components/faq/FaqAccordion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/messages";
 
@@ -19,14 +20,25 @@ export function FaqPageContent({
       <section className="relative overflow-hidden bg-[var(--ark-warm-white)] py-20 sm:py-28 lg:py-32">
         <div className="absolute left-[8%] top-24 h-px w-[42%] -rotate-6 bg-[var(--ark-gold-soft)]" />
         <Container>
-          <div className="max-w-5xl">
-            <p className="ark-section-label">{faq.hero.eyebrow}</p>
-            <h1 className="mt-6 max-w-5xl text-balance font-serif text-[3.2rem] font-semibold leading-[1.02] text-[var(--ark-navy)] sm:text-[5rem] lg:text-[6rem]">
-              {faq.hero.title}
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ark-gray)]">
-              {faq.hero.copy}
-            </p>
+          <div className="grid gap-12 lg:grid-cols-[0.58fr_0.42fr] lg:items-end">
+            <div>
+              <p className="ark-section-label">{faq.hero.eyebrow}</p>
+              <h1 className="mt-6 max-w-5xl text-balance font-serif text-[3.2rem] font-semibold leading-[1.02] text-[var(--ark-navy)] sm:text-[5rem] lg:text-[6rem]">
+                {faq.hero.title}
+              </h1>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ark-gray)]">
+                {faq.hero.copy}
+              </p>
+            </div>
+            <div className="max-w-md border border-[var(--ark-border)] bg-white p-3 lg:max-w-none">
+              <EditorialImage
+                image="faqDiscussion"
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="aspect-[4/5] sm:aspect-[3/4]"
+              />
+            </div>
           </div>
         </Container>
       </section>

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/messages";
 
@@ -124,12 +125,16 @@ export function AboutPageContent({
                 {about.personal.copy}
               </p>
             </div>
-            <div className="relative min-h-80 overflow-hidden border border-white/15 bg-white/[0.04] p-8">
-              {/* TODO: Add approved ARK advisor/team photography and verified credentials. */}
-              <div className="absolute left-10 top-10 h-52 w-40 rounded-t-full border-l border-t border-[var(--ark-gold-soft)]" />
-              <div className="absolute left-24 top-6 h-64 w-48 rounded-t-full border-l border-t border-[var(--ark-gold)]" />
-              <div className="absolute bottom-16 left-10 h-px w-[72%] -rotate-6 bg-[var(--ark-gold-soft)]" />
-              <div className="relative ml-auto max-w-xs border-l border-[var(--ark-gold)] pl-5">
+            <div className="relative overflow-hidden border border-white/15 bg-white/[0.04] p-4 sm:p-5">
+              <EditorialImage
+                image="consultation"
+                locale={locale}
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="min-h-80 sm:min-h-[28rem]"
+              />
+              <div className="absolute inset-4 bg-[var(--ark-navy)]/5 sm:inset-5" />
+              <div className="absolute bottom-12 left-8 h-px w-[62%] bg-[var(--ark-gold-soft)]" />
+              <div className="relative ml-auto mt-6 max-w-xs border-l border-[var(--ark-gold)] pl-5">
                 <h3 className="font-serif text-3xl font-semibold">{about.advisor.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-300">{about.advisor.copy}</p>
               </div>

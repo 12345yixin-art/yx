@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/messages";
 
@@ -19,16 +20,27 @@ export function ServicesPageContent({
         <div className="absolute left-[10%] top-20 h-px w-[78%] -rotate-6 bg-[var(--ark-gold-soft)] opacity-70" />
         <div className="absolute right-[12%] top-16 h-72 w-px bg-white/10" />
         <Container>
-          <div className="relative max-w-6xl">
-            <p className="ark-section-label ark-section-label-soft">
-              {services.hero.eyebrow}
-            </p>
-            <h1 className="mt-6 text-balance font-serif text-[3.25rem] font-semibold leading-[1] sm:text-[5rem] lg:text-[6.1rem]">
-              {services.hero.title}
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-200">
-              {services.hero.copy}
-            </p>
+          <div className="relative grid gap-12 lg:grid-cols-[0.58fr_0.42fr] lg:items-end">
+            <div>
+              <p className="ark-section-label ark-section-label-soft">
+                {services.hero.eyebrow}
+              </p>
+              <h1 className="mt-6 text-balance font-serif text-[3.25rem] font-semibold leading-[1] sm:text-[5rem] lg:text-[6.1rem]">
+                {services.hero.title}
+              </h1>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-200">
+                {services.hero.copy}
+              </p>
+            </div>
+            <div className="max-w-md border border-white/15 bg-white/[0.04] p-3 lg:max-w-none">
+              <EditorialImage
+                image="servicesPlanning"
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[3/4]"
+              />
+            </div>
           </div>
         </Container>
       </section>

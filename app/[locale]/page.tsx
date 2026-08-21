@@ -60,7 +60,7 @@ export default async function LocaleHomePage({ params }: PageProps) {
   return (
     <>
       <ModernHero dictionary={dictionary} locale={locale} />
-      <BrandStatement dictionary={dictionary} />
+      <BrandStatement dictionary={dictionary} locale={locale} />
       <PlanningPillars dictionary={dictionary} />
       <ArkJourney dictionary={dictionary} />
       <HumanTrust dictionary={dictionary} locale={locale} />

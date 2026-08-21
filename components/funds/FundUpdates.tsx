@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import { formatFundDate } from "@/data/aia-funds";
 import type { AiaFundDisplayData } from "@/lib/aia/server";
 import type { Dictionary } from "@/messages";
@@ -34,6 +35,12 @@ export function FundUpdates({
             <div className="mt-8">
               <MalaysiaClock label={copy.clockLabel} />
             </div>
+            <EditorialImage
+              image="nyse"
+              locale={locale}
+              sizes="(min-width: 1024px) 28vw, 100vw"
+              className="mt-8 aspect-[4/5] border border-[var(--ark-border)] sm:aspect-[16/10] lg:aspect-[4/5]"
+            />
             <Button href={`/${locale}/funds`} variant="ghost" className="group mt-7 gap-2 px-0">
               {copy.allFunds}
               <ArrowRight aria-hidden="true" size={16} className="text-[var(--ark-gold)] transition group-hover:translate-x-1" />

@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import { MalaysiaClock } from "@/components/funds/MalaysiaClock";
 import { formatFundDate } from "@/data/aia-funds";
 import type { AiaFundDisplayData } from "@/lib/aia/server";
@@ -37,8 +38,17 @@ export function FundOverviewPageContent({
                 {copy.copy}
               </p>
             </div>
-            <div className="border-y border-[var(--ark-border)] bg-white p-6">
+            <div className="border-y border-[var(--ark-border)] bg-white p-4 sm:p-5">
+              <EditorialImage
+                image="singaporeFinancialDistrict"
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="aspect-[4/3] border border-[var(--ark-border)]"
+              />
+              <div className="mt-6">
               <MalaysiaClock label={homeCopy.clockLabel} />
+              </div>
               <p className="mt-6 text-sm leading-7 text-[var(--ark-gray)]">
                 {copy.source}: AIA Malaysia
               </p>

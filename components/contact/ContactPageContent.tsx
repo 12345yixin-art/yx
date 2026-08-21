@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/messages";
 
@@ -17,14 +18,25 @@ export function ContactPageContent({
       <section className="relative overflow-hidden bg-[var(--ark-warm-white)] py-20 sm:py-28 lg:py-32">
         <div className="absolute right-[12%] top-24 h-28 w-px bg-[var(--ark-gold-soft)]" />
         <Container>
-          <div className="max-w-5xl">
-            <p className="ark-section-label">{contact.hero.eyebrow}</p>
-            <h1 className="mt-6 max-w-5xl text-balance font-serif text-[3.2rem] font-semibold leading-[1.02] text-[var(--ark-navy)] sm:text-[5rem] lg:text-[6rem]">
-              {contact.hero.title}
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ark-gray)]">
-              {contact.hero.copy}
-            </p>
+          <div className="grid gap-12 lg:grid-cols-[0.58fr_0.42fr] lg:items-end">
+            <div>
+              <p className="ark-section-label">{contact.hero.eyebrow}</p>
+              <h1 className="mt-6 max-w-5xl text-balance font-serif text-[3.2rem] font-semibold leading-[1.02] text-[var(--ark-navy)] sm:text-[5rem] lg:text-[6rem]">
+                {contact.hero.title}
+              </h1>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ark-gray)]">
+                {contact.hero.copy}
+              </p>
+            </div>
+            <div className="max-w-md border border-[var(--ark-border)] bg-white p-3 lg:max-w-none">
+              <EditorialImage
+                image="contactHandshake"
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="aspect-[4/5] sm:aspect-[3/4]"
+              />
+            </div>
           </div>
         </Container>
       </section>

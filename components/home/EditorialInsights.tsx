@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import { getInsights } from "@/data/insights";
 import type { Dictionary } from "@/messages";
 import type { Locale } from "@/lib/i18n";
@@ -21,6 +22,12 @@ export function EditorialInsights({ dictionary, locale }: { dictionary: Dictiona
             <h2 className="mt-5 max-w-xl font-serif text-4xl font-semibold leading-tight text-[var(--ark-navy)] sm:text-5xl">
               {insights.title}
             </h2>
+            <EditorialImage
+              image="investmentMarket"
+              locale={locale}
+              sizes="(min-width: 1024px) 36vw, 100vw"
+              className="mt-8 aspect-[4/3] border border-[var(--ark-border)] sm:aspect-[16/10]"
+            />
             <Button
               href={`/${locale}/insights`}
               variant="ghost"

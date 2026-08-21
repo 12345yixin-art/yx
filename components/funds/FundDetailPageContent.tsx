@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { EditorialImage } from "@/components/ui/EditorialImage";
 import { FundNavChart } from "@/components/funds/FundNavChart";
 import { formatFundDate } from "@/data/aia-funds";
 import type { AiaFundDisplayData } from "@/lib/aia/server";
@@ -20,6 +21,7 @@ export function FundDetailPageContent({
   const navText = latest ? `${latest.currency} ${latest.nav}` : copy.navUnavailable;
   const valuationText = latest ? formatFundDate(latest.valuationDate, locale) : copy.navUnavailable;
   const dataChecked = latest ? formatDateTime(latest.fetchedAt, locale) : null;
+  const marketImage = fund.currency === "USD" ? "usMarket" : "singaporeFinancialDistrict";
   const historyUnavailableText =
     historyStatus === "unavailable"
       ? copy.historyTemporaryUnavailable
@@ -49,7 +51,15 @@ export function FundDetailPageContent({
                 {copy.heroCopy}
               </p>
             </div>
-            <div className="border-y border-[var(--ark-border)] bg-white p-6 sm:p-8">
+            <div className="border-y border-[var(--ark-border)] bg-white p-4 sm:p-5">
+              <EditorialImage
+                image={marketImage}
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="aspect-[16/10] border border-[var(--ark-border)]"
+              />
+              <div className="p-2 pt-7 sm:p-3 sm:pt-8">
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--ark-gold)]">
                 {copy.navLabel}
               </p>
@@ -73,6 +83,7 @@ export function FundDetailPageContent({
                   </div>
                 ))}
               </dl>
+              </div>
             </div>
           </div>
         </Container>
