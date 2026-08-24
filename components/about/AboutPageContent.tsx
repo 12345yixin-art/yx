@@ -20,7 +20,7 @@ export function AboutPageContent({
         <div className="absolute right-0 top-20 h-72 w-28 rounded-l-full border-y border-l border-[var(--ark-gold-soft)]/70" />
         <div className="absolute right-[18%] top-28 h-px w-[38%] -rotate-6 bg-[var(--ark-gold)]" />
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.7fr_0.3fr] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
             <div>
               <p className="ark-section-label">
                 {about.hero.eyebrow}
@@ -36,10 +36,19 @@ export function AboutPageContent({
                 <Button href={`/${locale}/contact`}>{dictionary.home.hero.primary}</Button>
               </div>
             </div>
-            <div className="border-l border-[var(--ark-gold)] pl-6">
-              <p className="font-serif text-3xl font-semibold leading-tight text-[var(--ark-navy)]">
-                Direction · Protection · Progress · Legacy
-              </p>
+            <div className="max-w-md border border-[var(--ark-border)] bg-white p-3 lg:max-w-none">
+              <EditorialImage
+                image="aboutLiberty"
+                locale={locale}
+                priority
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]"
+              />
+              <div className="mt-5 border-l border-[var(--ark-gold)] pl-5">
+                <p className="font-serif text-2xl font-semibold leading-tight text-[var(--ark-navy)] sm:text-3xl">
+                  Direction · Protection · Progress · Legacy
+                </p>
+              </div>
             </div>
           </div>
         </Container>

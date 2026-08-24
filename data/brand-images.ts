@@ -6,6 +6,7 @@ export type BrandImageKey =
   | "servicesPlanning"
   | "faqDiscussion"
   | "contactHandshake"
+  | "aboutLiberty"
   | "consultation"
   | "investmentMarket"
   | "singaporeFinancialDistrict"
@@ -68,6 +69,16 @@ export const brandImages: Record<BrandImageKey, BrandImage> = {
     alt: {
       en: "Professional conversation with a handshake",
       zh: "专业会谈中的握手交流",
+    },
+  },
+  aboutLiberty: {
+    src: "/images/ark/ark-about-liberty.jpg",
+    width: 1600,
+    height: 2400,
+    objectPosition: "object-[50%_48%]",
+    alt: {
+      en: "Statue of Liberty against a blue sky",
+      zh: "蓝天下的自由女神像",
     },
   },
   consultation: {
