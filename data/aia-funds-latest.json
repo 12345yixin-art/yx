@@ -3,18 +3,18 @@
     "fundCode": "AIDS",
     "fundName": "AIA Infinite Dividend-Focus SGD Fund",
     "currency": "SGD",
-    "nav": "0.98719",
-    "valuationDate": "2026-11-06",
-    "checkedAt": "2026-11-11T07:44:13.305Z",
+    "nav": "0.99428",
+    "valuationDate": "2026-11-10",
+    "checkedAt": "2026-11-11T17:06:38.621Z",
     "sourceUrl": "https://www.aia.com.my/en/about-aia/financial-investment-info/investment-linked-funds/fund-info/details.html?currency=SGD&id=AIDS&pt=AIA+Infinite+Dividend-Focus+SGD+Fund"
   },
   {
     "fundCode": "AIDU",
     "fundName": "AIA Infinite Dividend-Focus USD Fund",
     "currency": "USD",
-    "nav": "0.98104",
-    "valuationDate": "2026-11-06",
-    "checkedAt": "2026-11-11T07:44:13.305Z",
+    "nav": "0.99092",
+    "valuationDate": "2026-11-10",
+    "checkedAt": "2026-11-11T17:06:38.621Z",
     "sourceUrl": "https://www.aia.com.my/en/about-aia/financial-investment-info/investment-linked-funds/fund-info/details.html?currency=USD&id=AIDU&pt=AIA+Infinite+Dividend-Focus+USD+Fund"
   }
 ]
